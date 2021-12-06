@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-with, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Tasks HTML</title>
+    </head>
+    <body>
+        <header>
+            <h1>Exercícios html</h1>
+        </header>
+        <nav>
+            <a href wm-nav="tasks/test.html" wm-nav > 00 - Test</a>
+            <a href wm-nav="tasks/temp.html" wm-nav > 02 - Temp</a>
+        </nav>
+        <section id="content"></section>
+        <footer>
+            Modern Web Course
+        </footer>        
+    </body>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            link.onclick = (e) => {
+                e.preventDefault()
+                const content = document.getElementById('content')
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => content.innerHTML = html)
+            }
+        })
+    </script>
+</html>
