@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CSS anatomy</title>
+    <style>
+        .selector {       
+            color: #fff;     
+            font-size: 30px;
+            text-align: center;
+            /* multiple selectors*/
+            border: solid 5px navy;
+            font-family: Helvetica, sans-serif;
+            /* functions */
+            width: calc(100% - 40px);
+            background-color: rgb(34, 153, 189);
+        }
+        /* pseudo class */
+        .selector:hover {
+            background-color: orangered;
+        }
+        /* pseudo-element */
+        .selector::first-letter {
+            font-size: 50px;
+            font-weight: bold;
+        }
+        /* dash-case or camelCase as naming pattern */
+    </style>
+</head>
+<body style="background-color: #fff;">
+    <div class="selector">
+        Content 
+    </div>
+</body>
+</html>
