@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* * select all elements*/
+        /* .tag class*/
+        /* #aprovados  id */
+        /* #aninhado > div  divs directly inside aninhado*/
+        /* #aninhado section section inside aninhado*/
+        /* p ~ ol */
+        /* p + ul direct sibling*/
+        /* p ~ ol sibling*/
+        /* [feira] atribute */
+        /* [feira=casa] atribute with value*/
+        /* [feira~=escritorio] atribute with value/
+        /* [feira*=sa] atribute with value*/
+        /* span:nth-child(1) span's nth(fisrt) child of someone*/
+        /* section > :nth-child(even) even atributes inside section*/
+        /* section > span:nth-of-type(2) the second span inside section*/
+
+        section > :nth-child(odd) , ul {
+            color: #ff0;
+            background-color: #f77;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag nolabel'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
