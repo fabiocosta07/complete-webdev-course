@@ -15,7 +15,7 @@
         li {
             width: 100px;
             height: 60px;
-            border: 2px solid;
+            border: 1px solid;
             display: inline-block;
             text-align: center;
             padding-top: 15px;
@@ -24,23 +24,28 @@
         a {
             text-decoration: none;
         }
+        ul {
+            padding: 0;
+            border: 1px solid;
+            margin: 0;
+        }
 
         .cabecalho {
-            border: 5px solid;
+            border: 1px solid;
         }
         .logo, .menu, .autenticacao {
             display: inline-block;
         }
         .logo {
-            border: 2px solid;
+            border: 1px solid;
             width: 300px;
-            height: 60px;
-            margin-top: 0;
+            height: 100%;
         }
         .menu-toggle {
             display: none;
         }
         .menu {
+            border: 1px solid;
         }
         .autenticacao{
             border: 2px solid;
@@ -61,20 +66,20 @@
             <i class="fa fa-lg fa-bars"></i>
         </button>
         <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-                <li>
-                    <a href="#cursos">Cursos</a>
-                </li>
-                <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        <a href="#inicio">Início</a>
+                    </li>
+                    <li>
+                        <a href="#cursos">Cursos</a>
+                    </li>
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+                </ul>
         </nav>
         <aside class="autenticacao">
             <a href="#login">Login</a>
