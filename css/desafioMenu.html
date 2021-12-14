@@ -84,7 +84,7 @@
     </style>
 </head>
 
-<body>
+<body onhashchange="hashChanged();">
     <header class="cabecalho">
         <div class="logo">
             <a href="#inicio">
@@ -117,6 +117,18 @@
     </header>
 
     <script>
+        function hashChanged(){
+            document.querySelectorAll('a').forEach(e => {
+                if (e.getAttribute('href').includes(location.hash) && !e.parentElement.classList.contains('logo')){
+                    e.style.color = '#000'
+                    e.parentElement.style.backgroundColor = 'blue' 
+                } else {
+                    e.style.color = '#fff'
+                    e.parentElement.style.backgroundColor = 'black' 
+                }
+            })
+        }
+
     </script>
 </body>
 
