@@ -41,29 +41,27 @@
         .cabecalho {
             border: 1px solid;
             background-color: black;
-            position: relative;
-            bottom: 20px;
             border-bottom: 2px solid blue;
-        }
-        .logo, .menu, .autenticacao {
-            display: inline-block;
         }
         .logo {
             border: 1px solid;
             width: 300px;
             height: 100%;
-            position: relative;
-            top: 20px;
+            display: inline-block;
         }
         .menu-toggle {
-            display: none;
+            display: block;
+            float: right;
+            margin: 20px;
         }
         .menu {
+            display: none;
         }
         .autenticacao{
             border: 2px solid;
             float: right;
-            margin: 35px;                                    
+            margin: 35px;
+            display: none;                                    
         }
 
         .botao {
@@ -80,8 +78,30 @@
         }
         .destaque:active {
             box-shadow: none;            
-        }        
-    </style>
+        }
+        @media (min-width: 1000px) {
+            .autenticacao {
+                display: inline-block;
+            }
+        }                
+        @media (min-width: 700px) {
+            .cabecalho {
+                position: relative;
+                bottom: 20px;
+            }
+            .logo {
+                position: relative;
+                top: 20px;
+            }
+            .menu {
+                display: inline-block;
+            }
+            .menu-toggle {
+                display: none;
+            }
+        }                
+
+</style>
 </head>
 
 <body onhashchange="hashChanged();">
@@ -112,12 +132,15 @@
         </nav>
         <aside class="autenticacao">
             <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
+            <a href="#registrar" class="botao destaque">Registrar</a>
         </aside>
     </header>
 
     <script>
         function hashChanged(){
+            if (location.hash.includes('#registrar') || location.hash.includes('#login')) {
+                return
+            }
             document.querySelectorAll('a').forEach(e => {
                 if (e.getAttribute('href').includes(location.hash) && !e.parentElement.classList.contains('logo')){
                     e.style.color = '#000'
